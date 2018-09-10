@@ -1,0 +1,10 @@
+@echo off
+@echo ###############################
+@echo ###############################
+
+set /p srv="List Sessions on PC NAME: "
+query session /SERVER:%srv%
+@echo ###############################
+set /p id1="Choose session ID to connect: "
+echo %id1%
+mstsc.exe /shadow:%id1% /control /noConsentPrompt /v:%srv%
